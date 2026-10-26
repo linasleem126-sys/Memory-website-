@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mena ♥ faride</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&family=Tajawal:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins','Tajawal',sans-serif;background:#fdf8f0;min-height:100vh;color:#5d0f1a;overflow-x:hidden;font-weight:300}
+:root{--burgundy:#5d0f1a;--gold:#c9a86a;--beige:#fdf8f0;--light-beige:#f5efe6}
+#lockScreen{position:fixed;inset:0;background:linear-gradient(135deg,#fdf8f0,#f5efe6,#e8ddd0);display:flex;align-items:center;justify-content:center;z-index:9999;transition:0.8s}
+.lock-box{background:white;padding:45px 32px;border-radius:24px;text-align:center;width:90%;max-width:380px;border:1.5px solid var(--gold);box-shadow:0 20px 50px rgba(93,15,26,0.1)}
+.lock-box h1{font-family:'Poppins',sans-serif;font-weight:200;font-size:32px;color:var(--burgundy);letter-spacing:2px}
+.lock-box p{color:#8a6d6d;margin-top:8px;font-weight:300;font-size:13px}
+#passwordInput{width:100%;padding:14px;border:1.5px solid #e8ddd0;border-radius:12px;text-align:center;margin:22px 0 14px;outline:none;background:var(--light-beige)}
+.lock-btn{background:var(--burgundy);color:white;border:none;padding:14px 30px;border-radius:30px;width:100%;font-weight:400;letter-spacing:1px;cursor:pointer}
+.page{display:none;min-height:100vh;padding:40px 20px 60px}.page.active{display:block;animation:fade 0.6s}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.container{max-width:800px;margin:0 auto}.center{text-align:center;padding-top:40px}
+.big-title{font-family:'Poppins','Tajawal',sans-serif;font-weight:200;font-size:52px;color:var(--burgundy);line-height:1.1;letter-spacing:3px}
+.big-title .heart-mark{color:var(--gold);font-weight:300;font-size:48px;vertical-align:middle}
+.big-title.arabic{font-family:'Tajawal',sans-serif;font-weight:300;font-size:56px;letter-spacing:1px}
+.sub{color:#8a6d6d;font-weight:300;letter-spacing:2px;margin-top:14px;text-transform:uppercase;font-size:11px}
+.big-btn{background:var(--burgundy);color:white;border:none;padding:15px 34px;border-radius:30px;font-size:13px;font-weight:300;letter-spacing:1.5px;cursor:pointer;margin-top:24px;text-transform:uppercase}
+.big-btn.gold{background:var(--gold);color:var(--burgundy)}
+.pageTitle{font-family:'Poppins','Tajawal',sans-serif;font-weight:300;font-size:26px;color:var(--burgundy);text-align:center;letter-spacing:1px;line-height:1.4}
+.mem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
+.mem-card{background:white;border-radius:18px;overflow:hidden;border:1px solid #f0e6d8;box-shadow:0 6px 20px rgba(0,0,0,0.04);transition:0.3s}
+.mem-card:hover{transform:translateY(-4px)}
+.mem-card img{width:100%;height:260px;object-fit:cover;display:block}
+.type-box{background:white;border-radius:22px;padding:40px 28px;min-height:420px;border:1px solid #f0e6d8;box-shadow:0 8px 30px rgba(0,0,0,0.04)}
+#typedText{font-family:'Tajawal',sans-serif;font-size:21px;line-height:2.2;color:var(--burgundy);white-space:pre-wrap;min-height:220px;text-align:center;font-weight:300}
+.gold-line{width:60px;height:2px;background:var(--gold);margin:16px auto}
+.reason{background:white;border-radius:16px;padding:18px 20px;display:flex;gap:14px;margin-bottom:12px;border:1px solid #f0e6d8;align-items:center}
+.reason .num{background:var(--gold);color:white;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:400;font-size:13px;flex-shrink:0}
+.reason-text{font-family:'Tajawal','Poppins';color:#5d0f1a;font-size:16px;font-weight:300}
+.heart{position:fixed;pointer-events:none;animation:float 4s linear forwards;color:var(--burgundy);z-index:999}
+@keyframes float{0%{transform:translateY(0) scale(0.5);opacity:1}100%{transform:translateY(-100vh) scale(1.5);opacity:0}}
+</style>
+</head>
+<body>
+<div id="lockScreen"><div class="lock-box"><h1>mena <span style="color:var(--gold)">♥</span> faride</h1><p>Enter Password To Open Your Gift</p><input type="password" id="passwordInput" placeholder="Password"><button class="lock-btn" onclick="checkPass()">OPEN GIFT</button><div id="passError" style="color:#a83232;display:none;margin-top:12px;font-size:13px">Wrong Password, Try Again</div></div></div>
+
+<audio id="bgMusic" loop><source src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/song.mp3" type="audio/mpeg"></audio>
+
+<div id="page-home" class="page active"><div class="container center"><div class="big-title">mena <span class="heart-mark">♥</span><br>faride</div><div class="gold-line"></div><p class="sub">this website has made specially for you</p><div style="font-size:48px;margin:20px 0">✉️</div><button class="big-btn" onclick="goPage('memories')">START JOURNEY</button></div></div>
+
+<div id="page-memories" class="page"><div class="container"><div class="pageTitle">things should be saved</div><div class="gold-line"></div>
+<div class="mem-grid">
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/1.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/2.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/3.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/4.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/5.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/6.jpg"></div>
+</div>
+<div style="text-align:center"><button class="big-btn gold" onclick="goPage('reasons')">NEXT</button></div></div></div>
+
+<div id="page-reasons" class="page"><div class="container"><div class="pageTitle">things that i love in you</div><div class="gold-line"></div><div id="reasonsList">
+<div class="reason"><span class="num">1</span><div class="reason-text">صاحبه جدعه وحنينه</div></div>
+<div class="reason"><span class="num">2</span><div class="reason-text">بتحافظ ع الاسرار</div></div>
+<div class="reason"><span class="num">3</span><div class="reason-text">ست بس ب100 راجل سند</div></div>
+<div class="reason"><span class="num">4</span><div class="reason-text">الى ف ايديها مش ليها</div></div>
+<div class="reason"><span class="num">5</span><div class="reason-text">واضحه وصريحه مش بتتلون</div></div>
+<div class="reason"><span class="num">6</span><div class="reason-text">بتكره الكدب والى ف قلبها ع لسانها</div></div>
+<div class="reason"><span class="num">7</span><div class="reason-text">بتحبنى وبتعاملنى انى اختها</div></div>
+<div class="reason"><span class="num">8</span><div class="reason-text">بتحبنى وتكره الى يزعلنى</div></div>
+<div class="reason"><span class="num">9</span><div class="reason-text">بتحب ولادى زى ولادها</div></div>
+<div class="reason"><span class="num">10</span><div class="reason-text">بتخاف عليا وبتزعل ع زعلى وبتشيل همى</div></div>
+<div class="reason" style="background:var(--light-beige);border-color:var(--gold)"><span class="num" style="background:var(--burgundy)">♥</span><div class="reason-text" style="font-weight:400">مهما نتشغل عن بعض الغلاوه هى هى بالعكس مع مرور الوقت بتكبر</div></div>
+</div><div style="text-align:center"><button class="big-btn gold" onclick="goPage('message')">Click here</button></div></div></div>
+
+<div id="page-message" class="page"><div class="container"><div class="pageTitle">Message For You</div><div class="gold-line"></div><div class="type-box" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div id="typedText"></div><div id="hiddenMessage" style="display:none">مش بعرف اتكلم كتير بس انتى اكيد عارفه غلاوتك عندى اي ربنا يباركلى فيكى ويديم بينا الود وتفضلى معايا لآخر عمرى وميكتبش علينا يوم وحش ابدا وما يدخلش بينا شيطان ابدا 
+انتى حظى الحلو فى الدنيا والاختيار الى عمرى ما ندمت عليه انتى نصيبى الحلو فى الدنيا ونعمه اتمنى دوامها</div><div style="margin-top:30px"><button id="clickHereBtn" class="big-btn gold" onclick="startTyping()">Click here</button></div></div><div style="text-align:center;margin-top:22px"><button class="big-btn" style="display:none" id="endBtn" onclick="goPage('end')">Continue 🥹</button></div></div></div>
+
+<div id="page-end" class="page"><div class="container center">
+<div style="font-size:70px">🤍</div>
+<div class="big-title arabic">بحبك ي فوفو</div>
+<div class="gold-line"></div>
+<div style="margin-top:12px;font-weight:200;letter-spacing:3px;font-size:22px;color:var(--burgundy)">mena ♥ faride forever</div>
+<button class="big-btn" onclick="goPage('home')">WATCH AGAIN</button>
+</div></div>
+
+<script>
+const PASSWORD="1234";let originalText="",isTyping=false;
+function checkPass(){if(document.getElementById('passwordInput').value===PASSWORD){document.getElementById('lockScreen').style.transform="translateY(-100%)";setTimeout(()=>document.getElementById('lockScreen').style.display='none',700);const a=document.getElementById('bgMusic');a.volume=0.5;a.play().catch(()=>{document.body.addEventListener('click',()=>a.play(),{once:true})});}else{document.getElementById('passError').style.display='block';}}
+function goPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function startTyping(){if(isTyping)return;const el=document.getElementById('typedText');const hidden=document.getElementById('hiddenMessage');if(!originalText)originalText=hidden.innerText;const t=originalText;el.textContent="";isTyping=true;document.getElementById('clickHereBtn').style.display='none';let i=0;function type(){if(i<t.length){el.textContent+=t.charAt(i);i++;setTimeout(type,40);}else{isTyping=false;document.getElementById('endBtn').style.display='inline-block';}}type();}
+document.getElementById('passwordInput').addEventListener('keypress',e=>{if(e.key==='Enter')checkPass()});
+setInterval(()=>{const h=document.createElement('div');h.className='heart';h.innerHTML='❤';h.style.left=Math.random()*100+'vw';h.style.bottom='0';h.style.fontSize=(Math.random()*18+10)+'px';h.style.opacity=Math.random()*0.5+0.3;document.body.appendChild(h);setTimeout(()=>h.remove(),4000);},380);
+</script>
+</body>
+</html>
