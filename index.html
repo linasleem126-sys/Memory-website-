@@ -41,22 +41,22 @@ body{font-family:'Poppins','Tajawal',sans-serif;background:#fdf8f0;min-height:10
 <body>
 <div id="lockScreen"><div class="lock-box"><h1>mena <span style="color:var(--gold)">♥</span> faride</h1><p>Enter Password To Open Your Gift</p><input type="password" id="passwordInput" placeholder="Password"><button class="lock-btn" onclick="checkPass()">OPEN GIFT</button><div id="passError" style="color:#a83232;display:none;margin-top:12px;font-size:13px">Wrong Password, Try Again</div></div></div>
 
-<audio id="bgMusic" loop><source src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/song.mp3" type="audio/mpeg"></audio>
+<audio id="bgMusic" loop><source src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/song.mp3" type="audio/mpeg"></audio>
 
 <div id="page-home" class="page active"><div class="container center"><div class="big-title">mena <span class="heart-mark">♥</span><br>faride</div><div class="gold-line"></div><p class="sub">this website has made specially for you</p><div style="font-size:48px;margin:20px 0">✉️</div><button class="big-btn" onclick="goPage('memories')">START JOURNEY</button></div></div>
 
 <div id="page-memories" class="page"><div class="container"><div class="pageTitle">things should be saved</div><div class="gold-line"></div>
 <div class="mem-grid">
-<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/1.jpg"></div>
-<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/2.jpg"></div>
-<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/3.jpg"></div>
-<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/4.jpg"></div>
-<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/5.jpg"></div>
-<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Gift-website-@main/6.jpg"></div>
+<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/1.jpg"></div>
+<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/2.jpg"></div>
+<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/3.jpg"></div>
+<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/4.jpg"></div>
+<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/5.jpg"></div>
+<div class="mem-card"><img src="https://cdn.jsdelivr.net/gh/linasleem126-sys/Memory-website-@main/6.jpg"></div>
 </div>
 <div style="text-align:center"><button class="big-btn gold" onclick="goPage('reasons')">NEXT</button></div></div></div>
 
-<div id="page-reasons" class="page"><div class="container"><div class="pageTitle">10 things that mena love in Faride ♥️</div><div class="gold-line"></div><div id="reasonsList">
+<div id="page-reasons" class="page"><div class="container"><div class="pageTitle">10 things that mena love in Faride ♥️</div><div class="gold-line"></div>
 <div class="reason"><span class="num">1</span><div class="reason-text">صاحبه جدعه وحنينه</div></div>
 <div class="reason"><span class="num">2</span><div class="reason-text">بتحافظ ع الاسرار</div></div>
 <div class="reason"><span class="num">3</span><div class="reason-text">ست بس ب100 راجل سند</div></div>
@@ -68,18 +68,12 @@ body{font-family:'Poppins','Tajawal',sans-serif;background:#fdf8f0;min-height:10
 <div class="reason"><span class="num">9</span><div class="reason-text">بتحب ولادى زى ولادها</div></div>
 <div class="reason"><span class="num">10</span><div class="reason-text">بتخاف عليا وبتزعل ع زعلى وبتشيل همى</div></div>
 <div class="reason" style="background:var(--light-beige);border-color:var(--gold)"><span class="num" style="background:var(--burgundy)">♥</span><div class="reason-text" style="font-weight:400">مهما نتشغل عن بعض الغلاوه هى هى بالعكس مع مرور الوقت بتكبر</div></div>
-</div><div style="text-align:center"><button class="big-btn gold" onclick="goPage('message')">Click here</button></div></div></div>
+<div style="text-align:center"><button class="big-btn gold" onclick="goPage('message')">Click here</button></div></div></div>
 
 <div id="page-message" class="page"><div class="container"><div class="pageTitle">Message For You</div><div class="gold-line"></div><div class="type-box" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div id="typedText"></div><div id="hiddenMessage" style="display:none">مش بعرف اتكلم كتير بس انتى اكيد عارفه غلاوتك عندى اي ربنا يباركلى فيكى ويديم بينا الود وتفضلى معايا لآخر عمرى وميكتبش علينا يوم وحش ابدا وما يدخلش بينا شيطان ابدا 
 انتى حظى الحلو فى الدنيا والاختيار الى عمرى ما ندمت عليه انتى نصيبى الحلو فى الدنيا ونعمه اتمنى دوامها</div><div style="margin-top:30px"><button id="clickHereBtn" class="big-btn gold" onclick="startTyping()">Click here</button></div></div><div style="text-align:center;margin-top:22px"><button class="big-btn" style="display:none" id="endBtn" onclick="goPage('end')">Continue 🥹</button></div></div></div>
 
-<div id="page-end" class="page"><div class="container center">
-<div style="font-size:70px">🤍</div>
-<div class="big-title arabic">بحبك ي فوفو ♥️</div>
-<div class="gold-line"></div>
-<div style="margin-top:12px;font-weight:200;letter-spacing:3px;font-size:22px;color:var(--burgundy)">mena ♥ faride forever</div>
-<button class="big-btn" onclick="goPage('home')">WATCH AGAIN</button>
-</div></div>
+<div id="page-end" class="page"><div class="container center"><div style="font-size:70px">🤍</div><div class="big-title arabic">بحبك ي فوفو ♥️</div><div class="gold-line"></div><div style="margin-top:12px;font-weight:200;letter-spacing:3px;font-size:22px;color:var(--burgundy)">mena ♥ faride forever</div><button class="big-btn" onclick="goPage('home')">WATCH AGAIN</button></div></div>
 
 <script>
 const PASSWORD="1234";let originalText="",isTyping=false;
@@ -90,4 +84,4 @@ document.getElementById('passwordInput').addEventListener('keypress',e=>{if(e.ke
 setInterval(()=>{const h=document.createElement('div');h.className='heart';h.innerHTML='❤';h.style.left=Math.random()*100+'vw';h.style.bottom='0';h.style.fontSize=(Math.random()*18+10)+'px';h.style.opacity=Math.random()*0.5+0.3;document.body.appendChild(h);setTimeout(()=>h.remove(),4000);},380);
 </script>
 </body>
-  </html>
+</html>
